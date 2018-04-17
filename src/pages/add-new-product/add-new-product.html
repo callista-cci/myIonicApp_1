@@ -1,0 +1,41 @@
+<!--
+  Generated template for the AddNewProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add a New Product</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="submitNewProduct()">
+
+    <ion-item>
+      <ion-label fixed> Product Name</ion-label>
+      <ion-input type="text" [(ngModel)]="product.name" name="name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed> Cost</ion-label>
+      <ion-input type="text" [(ngModel)]="product.cost" name="cost" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label fixed> Available</ion-label>
+        <ion-checkbox [(ngModel)]="product.available" name="available" disabled="true" ></ion-checkbox>
+      </ion-item>
+      <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="product.availableFromDate" name="availableFromDate"></ion-datetime>
+        </ion-item>
+    <ion-item>
+      <button ion-button full round type="submit" > Add Product</button>
+    </ion-item>
+  
+  </form>
+</ion-content>

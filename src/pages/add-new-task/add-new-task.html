@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Task</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <form (ngSubmit)="submitNewTask()">
+
+  <ion-item>
+    <ion-label fixed> TaskName</ion-label>
+    <ion-input type="text" [(ngModel)]="task.taskname" name="taskname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed> Description</ion-label>
+    <ion-input type="text" [(ngModel)]="task.taskdescription" name="taskdescription" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <button ion-button full round type="submit" > Add Task</button>
+  </ion-item>
+
+</form>
+</ion-content>
