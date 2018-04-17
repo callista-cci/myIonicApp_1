@@ -9,6 +9,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { PhotosPage } from '../pages/photos/photos';
 import { AddNewTaskPage } from '../pages/add-new-task/add-new-task'
 import { TaskManagerProvider } from '../providers/task-manager/task-manager';
 import { RestProvider } from '../providers/rest/rest';
@@ -20,12 +21,20 @@ import { AddNewProductPage } from '../pages/add-new-product/add-new-product'
     HomePage,
     LoginPage,
     AddNewTaskPage,
-    AddNewProductPage
+    AddNewProductPage,
+    PhotosPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      menuType:'push',
+      platforms:{
+        ios:{
+          menuType:'overlay',
+        }
+      }
+    }),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -34,7 +43,8 @@ import { AddNewProductPage } from '../pages/add-new-product/add-new-product'
     LoginPage,
     HomePage,
     AddNewTaskPage,
-    AddNewProductPage
+    AddNewProductPage,
+    PhotosPage
   ],
   providers: [
     StatusBar,

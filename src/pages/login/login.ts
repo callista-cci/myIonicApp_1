@@ -60,13 +60,13 @@ export class LoginPage {
   loginForm(){
       this.storage.set('username',this.login.value['username']);
       console.log(this.login.value);
-      this.navCtrl.push(HomePage,'');
+      this.navCtrl.setRoot(HomePage);
 
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
     this.storage.get('username').then((val) => {
-        this.navCtrl.push(HomePage,'');
+        this.navCtrl.setRoot(HomePage);
     });
   }
 

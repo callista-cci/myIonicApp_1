@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { AddNewTaskPage } from '../add-new-task/add-new-task';
 import { TaskManagerProvider } from '../../providers/task-manager/task-manager'
 import { Task } from '../../Model/Task';
@@ -17,7 +17,7 @@ export class HomePage {
   productList = new Array<Product>();
 
 
-  constructor(public navCtrl: NavController, private taskManager: TaskManagerProvider, private restProvider:RestProvider ) {
+  constructor(public navCtrl: NavController, private taskManager: TaskManagerProvider, private restProvider:RestProvider, public menuCtrl: MenuController ) {
 
   }
   getAllProducts(){
@@ -66,5 +66,16 @@ export class HomePage {
     console.log('ionViewWillEnter Home Page');
     this.taskList = this.taskManager.getTaskList();
     this.getAllProducts();
+  }
+  openMenu() {
+    this.menuCtrl.open();
+  }
+ 
+  closeMenu() {
+    this.menuCtrl.close();
+  }
+ 
+  toggleMenu() {
+    this.menuCtrl.toggle();
   }
 }
